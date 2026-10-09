@@ -1,14 +1,16 @@
 import heroImg from '../assets/hero-desktop.jpg'
-import traditional from '../assets/gen-traditional.jpg'
-import bridal from '../assets/gen-bridal.jpg'
-import gemstone from '../assets/gen-gemstone.jpg'
-import temple from '../assets/gen-temple.jpg'
-import statement from '../assets/gen-statement.jpg'
-import showcaseBridal from '../assets/showcase-bridal.jpg'
-import showcaseStatement from '../assets/showcase-statement.jpg'
-import storyHeritage from '../assets/story-heritage.jpg'
-import videoBoutique from '../assets/Video-55865.mp4'
-import videoCraft from '../assets/Video-95839.mp4'
+import traditional from '../assets/set-peacock.jpg'
+import bridal from '../assets/set-polki-bridal.jpg'
+import gemstone from '../assets/set-emerald-asym.jpg'
+import temple from '../assets/set-ranihaar.jpg'
+import statement from '../assets/set-emerald-ornate.jpg'
+import bangles from '../assets/set-bangles-ruby.jpg'
+import earrings from '../assets/set-jhumkas.jpg'
+import showcaseBangles from '../assets/set-bangles-polki.jpg'
+import showcasePolki from '../assets/set-polki-grandeur.jpg'
+import storyHeritage from '../assets/set-guluband.jpg'
+import videoBoutique from '../assets/video-project-4-portrait.mp4'
+import videoCraft from '../assets/video-project-3-portrait.mp4'
 
 export const WHATSAPP_NUMBER = '919983799000'
 
@@ -82,6 +84,35 @@ export const collections = [
     sub: 'Bold & beautiful',
     img: statement,
   },
+  {
+    name: 'Bangles',
+    sub: 'Gold for every wrist',
+    img: bangles,
+  },
+  {
+    name: 'Earrings',
+    sub: 'Everyday grandeur',
+    img: earrings,
+  },
+]
+
+export const showcasePieces = [
+  {
+    label: 'Polki edit',
+    title: 'Light caught in heritage stone.',
+    img: showcasePolki,
+    alt: 'Polki necklace',
+    span: 'md:col-span-7',
+    aspect: 'aspect-[4/5] sm:aspect-[5/4]',
+  },
+  {
+    label: 'Bangle edit',
+    title: 'Craft you can feel.',
+    img: showcaseBangles,
+    alt: 'Gold polki bangles',
+    span: 'md:col-span-5',
+    aspect: 'aspect-[4/5]',
+  },
 ]
 
 export {
@@ -91,8 +122,10 @@ export {
   gemstone,
   temple,
   statement,
-  showcaseBridal,
-  showcaseStatement,
+  bangles,
+  earrings,
+  showcaseBangles,
+  showcasePolki,
   storyHeritage,
   videoBoutique,
   videoCraft,

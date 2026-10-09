@@ -15,6 +15,12 @@ import {
 } from 'lucide-react'
 
 import InstagramIcon from '../components/InstagramIcon'
+import Seo from '../components/Seo'
+import {
+  breadcrumbJsonLd,
+  localBusinessJsonLd,
+  pages,
+} from '../data/seo'
 import {
   WHATSAPP_NUMBER,
   contact,
@@ -200,6 +206,19 @@ ${message}`
 
   return (
     <main className="bg-[#fbf8f1]">
+      <Seo
+        title={pages.contact.title}
+        description={pages.contact.description}
+        path={pages.contact.path}
+        keywords={pages.contact.keywords}
+        jsonLd={[
+          localBusinessJsonLd(),
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Contact', path: '/contact' },
+          ]),
+        ]}
+      />
 
       {/* Hero */}
       <section className="luxury-bg noise relative overflow-hidden px-4 pb-16 pt-24 text-white sm:px-6 md:px-10 md:pb-24 md:pt-32">

@@ -10,18 +10,22 @@ import {
 
 import { Link } from 'react-router-dom'
 
-import CollectionCarousel, {
-  CollectionGrid,
-} from '../components/CollectionCarousel'
+import CollectionCarousel from '../components/CollectionCarousel'
 import Hero from '../components/Hero'
 import Reveal from '../components/Reveal'
+import Seo from '../components/Seo'
 import VideoSection from '../components/VideoSection'
 
 import {
+  breadcrumbJsonLd,
+  localBusinessJsonLd,
+  pages,
+  websiteJsonLd,
+} from '../data/seo'
+import {
   collections,
   contact,
-  showcaseBridal,
-  showcaseStatement,
+  showcasePieces,
   storyHeritage,
   videoBoutique,
   videoCraft,
@@ -30,6 +34,18 @@ import {
 export default function Home({ onEnquire }) {
   return (
     <main>
+      <Seo
+        title={pages.home.title}
+        description={pages.home.description}
+        path={pages.home.path}
+        keywords={pages.home.keywords}
+        jsonLd={[
+          localBusinessJsonLd(),
+          websiteJsonLd(),
+          breadcrumbJsonLd([{ name: 'Home', path: '/' }]),
+        ]}
+      />
+
       <Hero />
 
       {/* Video right after first scroll */}
@@ -107,8 +123,6 @@ export default function Home({ onEnquire }) {
 
           <CollectionCarousel items={collections} />
 
-          <CollectionGrid items={collections} />
-
         </div>
 
       </section>
@@ -124,13 +138,13 @@ export default function Home({ onEnquire }) {
       >
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px]">
+            <div className="relative mx-auto w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[380px]">
               <div className="absolute -inset-3 border border-[#d8b56c]/20 sm:-inset-4" />
-              <div className="aspect-[4/5] max-h-[320px] overflow-hidden sm:max-h-[380px]">
+              <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#1a0f0c]">
                 <img
                   src={storyHeritage}
                   alt="Heritage jewellery craftsmanship"
-                  className="image-luxury h-full w-full object-cover"
+                  className="image-luxury absolute inset-0 h-full w-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
                 />
@@ -313,55 +327,33 @@ export default function Home({ onEnquire }) {
 
 
           <div className="grid gap-4 md:grid-cols-12">
-
-            <Reveal className="md:col-span-7">
-
-              <div className="group relative aspect-[4/5] overflow-hidden bg-[#1a0f0c] sm:aspect-[5/4] sm:max-h-[340px] md:max-h-[380px]">
-                <img
-                  src={showcaseBridal}
-                  alt="Bridal jewellery"
-                  className="image-luxury h-full w-full object-cover object-center"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 text-white sm:p-5 md:p-6">
-                  <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">
-                    Bridal edit
-                  </div>
-                  <div className="mt-1 font-display text-xl sm:text-2xl md:text-3xl">
-                    For the day you'll remember forever.
-                  </div>
-                </div>
-              </div>
-
-            </Reveal>
-
-
-            <Reveal
-              className="md:col-span-5"
-              delay={0.08}
-            >
-
-              <div className="group relative aspect-[4/5] overflow-hidden bg-[#1a0f0c] sm:max-h-[340px] md:max-h-[380px]">
-                <img
-                  src={showcaseStatement}
-                  alt="Statement jewellery"
-                  className="image-luxury h-full w-full object-cover object-top"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 text-white sm:p-5 md:p-6">
-                  <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">
-                    Statement edit
-                  </div>
-                  <div className="mt-1 font-display text-xl md:text-2xl">
-                    Colour with character.
+            {showcasePieces.map((piece, i) => (
+              <Reveal
+                key={piece.label}
+                className={piece.span}
+                delay={i * 0.06}
+              >
+                <div
+                  className={`group relative overflow-hidden bg-[#1a0f0c] sm:max-h-[340px] md:max-h-[380px] ${piece.aspect}`}
+                >
+                  <img
+                    src={piece.img}
+                    alt={piece.alt}
+                    className="image-luxury h-full w-full object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 text-white sm:p-5 md:p-6">
+                    <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">
+                      {piece.label}
+                    </div>
+                    <div className="mt-1 font-display text-xl sm:text-2xl md:text-3xl">
+                      {piece.title}
+                    </div>
                   </div>
                 </div>
-              </div>
-
-            </Reveal>
-
+              </Reveal>
+            ))}
           </div>
 
         </div>

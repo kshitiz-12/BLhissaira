@@ -45,10 +45,14 @@ export default function Header({ onEnquire }) {
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3 px-4 py-3 sm:px-5 sm:py-4 md:px-8 lg:px-12 lg:py-5">
-        <Link to="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+        <Link
+          to="/"
+          aria-label="New B. L. Hissaria Jewellers — Home"
+          className="flex min-w-0 items-center gap-2.5 sm:gap-3"
+        >
           <img
             src={logo}
-            alt="New B. L. Hissaria Jewellers"
+            alt="New B. L. Hissaria Jewellers logo"
             className="h-9 w-9 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(217,178,93,.25)] sm:h-10 sm:w-10 md:h-12 md:w-12"
             loading="eager"
             decoding="async"
@@ -65,7 +69,7 @@ export default function Header({ onEnquire }) {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-6 xl:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex">
           {nav.map((item) => (
             <Link
               key={item.label}

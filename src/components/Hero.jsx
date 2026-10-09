@@ -64,6 +64,7 @@ export default function Hero() {
             animate="show"
             className="font-display text-[34px] leading-[1.08] tracking-[-0.02em] sm:text-[56px] lg:text-[68px] xl:text-[74px]"
           >
+            <span className="sr-only">New B. L. Hissaria Jewellers — </span>
             <span className="text-[#f4eee6]">Tradition in Every</span>
             <br />
             <span className="gold-text">Golden Detail</span>
