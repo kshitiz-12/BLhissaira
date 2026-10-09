@@ -21,14 +21,29 @@ import {
   collections,
   contact,
   showcaseBridal,
-  statement,
-  temple,
+  showcaseStatement,
+  storyHeritage,
+  videoBoutique,
+  videoCraft,
 } from '../data/site'
 
 export default function Home({ onEnquire }) {
   return (
     <main>
       <Hero />
+
+      {/* Video right after first scroll */}
+      <VideoSection
+        id="film-intro"
+        eyebrow="Inside the store"
+        title={
+          <>
+            Moments from our <span className="gold-text italic">boutique.</span>
+          </>
+        }
+        description="Watch the glow of heritage gold and the quiet craft of New B. L. Hissaria Jewellers."
+        videoSrc={videoCraft}
+      />
 
       {/* =========================================================
           TRUST STRIP
@@ -113,8 +128,8 @@ export default function Home({ onEnquire }) {
               <div className="absolute -inset-3 border border-[#d8b56c]/20 sm:-inset-4" />
               <div className="aspect-[4/5] max-h-[320px] overflow-hidden sm:max-h-[380px]">
                 <img
-                  src={temple}
-                  alt="Heritage temple jewellery"
+                  src={storyHeritage}
+                  alt="Heritage jewellery craftsmanship"
                   className="image-luxury h-full w-full object-cover"
                   loading="lazy"
                   decoding="async"
@@ -251,7 +266,18 @@ export default function Home({ onEnquire }) {
       </section>
 
 
-      <VideoSection />
+      <VideoSection
+        id="film"
+        eyebrow="From the boutique"
+        title={
+          <>
+            A glimpse of <span className="gold-text italic">our craft.</span>
+          </>
+        }
+        description="Step inside New B. L. Hissaria Jewellers — where every piece is shaped with heritage and care."
+        videoSrc={videoBoutique}
+        reverse
+      />
 
       {/* =========================================================
           SHOWCASE
@@ -318,7 +344,7 @@ export default function Home({ onEnquire }) {
 
               <div className="group relative aspect-[4/5] overflow-hidden bg-[#1a0f0c] sm:max-h-[340px] md:max-h-[380px]">
                 <img
-                  src={statement}
+                  src={showcaseStatement}
                   alt="Statement jewellery"
                   className="image-luxury h-full w-full object-cover object-top"
                   loading="lazy"

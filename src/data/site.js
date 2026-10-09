@@ -5,6 +5,10 @@ import gemstone from '../assets/gen-gemstone.jpg'
 import temple from '../assets/gen-temple.jpg'
 import statement from '../assets/gen-statement.jpg'
 import showcaseBridal from '../assets/showcase-bridal.jpg'
+import showcaseStatement from '../assets/showcase-statement.jpg'
+import storyHeritage from '../assets/story-heritage.jpg'
+import videoBoutique from '../assets/Video-55865.mp4'
+import videoCraft from '../assets/Video-95839.mp4'
 
 export const WHATSAPP_NUMBER = '919983799000'
 
@@ -88,4 +92,8 @@ export {
   temple,
   statement,
   showcaseBridal,
+  showcaseStatement,
+  storyHeritage,
+  videoBoutique,
+  videoCraft,
 }

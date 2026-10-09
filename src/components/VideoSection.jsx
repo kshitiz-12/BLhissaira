@@ -2,16 +2,25 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Pause, Play, Volume2, VolumeX } from 'lucide-react'
 import Reveal from './Reveal'
-import storeVideo from '../assets/Video-55865.mp4'
 
-export default function VideoSection() {
+export default function VideoSection({
+  id = 'film',
+  eyebrow = 'From the boutique',
+  title = (
+    <>
+      A glimpse of <span className="gold-text italic">our craft.</span>
+    </>
+  ),
+  description = 'Step inside New B. L. Hissaria Jewellers — where every piece is shaped with heritage and care.',
+  videoSrc,
+  reverse = false,
+}) {
   const sectionRef = useRef(null)
   const videoRef = useRef(null)
   const [shouldLoad, setShouldLoad] = useState(false)
   const [playing, setPlaying] = useState(false)
   const [muted, setMuted] = useState(true)
 
-  // Load video only when section is near viewport
   useEffect(() => {
     const el = sectionRef.current
     if (!el) return
@@ -30,7 +39,6 @@ export default function VideoSection() {
     return () => observer.disconnect()
   }, [])
 
-  // Autoplay once loaded and visible
   useEffect(() => {
     if (!shouldLoad) return
     const v = videoRef.current
@@ -77,22 +85,24 @@ export default function VideoSection() {
   return (
     <section
       ref={sectionRef}
-      id="film"
+      id={id}
       className="luxury-bg noise relative overflow-hidden px-4 py-12 text-white sm:px-6 md:px-10 md:py-16 lg:py-24"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      <div
+        className={`mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 ${
+          reverse ? 'lg:[&>*:first-child]:order-2' : ''
+        }`}
+      >
         <Reveal>
           <div className="max-w-lg">
             <div className="mb-3 flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-[#d8b56c]">
               <span className="h-px w-7 bg-[#d8b56c]" />
-              From the boutique
+              {eyebrow}
             </div>
             <h2 className="font-display text-3xl tracking-[-0.02em] sm:text-4xl md:text-5xl lg:text-6xl">
-              A glimpse of <span className="gold-text italic">our craft.</span>
+              {title}
             </h2>
-            <p className="mt-4 text-sm leading-7 text-white/50 sm:mt-5">
-              Step inside New B. L. Hissaria Jewellers — where every piece is shaped with heritage and care.
-            </p>
+            <p className="mt-4 text-sm leading-7 text-white/50 sm:mt-5">{description}</p>
           </div>
         </Reveal>
 
@@ -102,7 +112,7 @@ export default function VideoSection() {
               {shouldLoad ? (
                 <video
                   ref={videoRef}
-                  src={storeVideo}
+                  src={videoSrc}
                   className="absolute inset-0 h-full w-full object-cover object-center"
                   playsInline
                   loop
