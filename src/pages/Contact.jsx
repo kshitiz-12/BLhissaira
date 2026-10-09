@@ -202,7 +202,7 @@ ${message}`
     <main className="bg-[#fbf8f1]">
 
       {/* Hero */}
-      <section className="luxury-bg noise relative overflow-hidden px-6 pb-20 pt-28 text-white md:px-10 md:pb-24 md:pt-32">
+      <section className="luxury-bg noise relative overflow-hidden px-4 pb-16 pt-24 text-white sm:px-6 md:px-10 md:pb-24 md:pt-32">
 
         <motion.div
           animate={{
@@ -257,7 +257,7 @@ ${message}`
 
             <motion.h1
               variants={fadeUp}
-              className="font-display text-4xl leading-[0.95] md:text-5xl lg:text-6xl"
+              className="font-display text-3xl leading-[0.95] sm:text-4xl md:text-5xl lg:text-6xl"
             >
               We'd love to{' '}
               <span className="gold-text italic">
@@ -317,8 +317,8 @@ ${message}`
       </section>
 
       {/* Content */}
-      <section className="px-6 pb-20 md:px-10 lg:pb-28">
-        <div className="mx-auto -mt-12 max-w-6xl">
+      <section className="px-4 pb-16 sm:px-6 md:px-10 md:pb-20 lg:pb-28">
+        <div className="mx-auto -mt-8 max-w-6xl sm:-mt-12">
 
           <div className="grid gap-6 lg:grid-cols-[1fr_1.15fr]">
 
@@ -487,7 +487,7 @@ ${message}`
                 duration: 0.7,
                 ease: [0.2, 0.65, 0.2, 1],
               }}
-              className="rounded-sm border border-[#3d2618]/10 bg-white p-6 shadow-sm md:p-8 lg:sticky lg:top-28 lg:self-start"
+              className="rounded-sm border border-[#3d2618]/10 bg-white p-4 shadow-sm sm:p-6 md:p-8 lg:sticky lg:top-28 lg:self-start"
             >
 
               <AnimatePresence mode="wait">
@@ -811,7 +811,7 @@ ${message}`
                 duration: 0.6,
                 delay: 0.15,
               }}
-              className="relative aspect-[21/9] max-h-[300px] w-full bg-[#e8dfd0]"
+              className="relative aspect-[4/3] max-h-[240px] w-full bg-[#e8dfd0] sm:aspect-[16/9] sm:max-h-[280px] md:aspect-[21/9] md:max-h-[300px]"
             >
 
               <iframe

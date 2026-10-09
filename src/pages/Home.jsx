@@ -35,45 +35,31 @@ export default function Home({ onEnquire }) {
       ========================================================= */}
 
       <section className="border-b border-[#2e1a12]/10 bg-[#f6efe2]">
-
         <div className="mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
-
           {[
             ['Pure & Hallmarked', 'Assured quality', Diamond],
             ['Trusted Legacy', 'Generations of trust', ShieldCheck],
             ['Exquisite Craftsmanship', 'Finest details', Sparkles],
             ['Bespoke Service', 'Designed around you', Heart],
-          ].map(([a, b, I]) => (
-
+          ].map(([a, b, I], i) => (
             <div
               key={a}
-              className="flex items-center gap-3 border-r border-[#2e1a12]/10 px-4 py-5 last:border-0 md:px-6 md:py-6"
+              className={`flex items-start gap-2.5 px-3 py-4 sm:items-center sm:gap-3 sm:px-4 sm:py-5 md:px-6 md:py-6 ${
+                i % 2 === 0 ? 'border-r border-[#2e1a12]/10' : ''
+              } ${i < 2 ? 'border-b border-[#2e1a12]/10 md:border-b-0' : ''} ${
+                i < 3 ? 'md:border-r md:border-[#2e1a12]/10' : ''
+              }`}
             >
-
-              <I
-                size={22}
-                strokeWidth={1.2}
-                className="shrink-0 text-[#a37b36]"
-              />
-
+              <I size={18} strokeWidth={1.2} className="mt-0.5 shrink-0 text-[#a37b36] sm:mt-0 sm:size-[22px]" />
               <div>
-
-                <div className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#2b1b14]">
+                <div className="text-[8px] font-semibold uppercase leading-snug tracking-[0.12em] text-[#2b1b14] sm:text-[9px] sm:tracking-[0.16em]">
                   {a}
                 </div>
-
-                <div className="mt-0.5 text-[9px] text-[#7d6d60]">
-                  {b}
-                </div>
-
+                <div className="mt-0.5 text-[8px] text-[#7d6d60] sm:text-[9px]">{b}</div>
               </div>
-
             </div>
-
           ))}
-
         </div>
-
       </section>
 
 
@@ -83,39 +69,25 @@ export default function Home({ onEnquire }) {
 
       <section
         id="collections"
-        className="marble px-6 py-16 md:px-10 lg:py-24"
+        className="marble px-4 py-12 sm:px-6 md:px-10 md:py-16 lg:py-24"
       >
-
         <div className="mx-auto max-w-6xl">
-
           <Reveal>
-
-            <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-
+            <div className="mb-8 flex flex-col justify-between gap-3 md:mb-10 md:flex-row md:items-end md:gap-4">
               <div>
-
                 <div className="mb-2 flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-[#987339]">
                   <span className="h-px w-7 bg-[#987339]" />
                   Our collections
                 </div>
-
-                <h2 className="font-display text-4xl tracking-[-0.02em] md:text-5xl lg:text-6xl">
-                  Jewellery for{' '}
-                  <span className="italic">
-                    Every Story
-                  </span>
+                <h2 className="font-display text-3xl tracking-[-0.02em] sm:text-4xl md:text-5xl lg:text-6xl">
+                  Jewellery for <span className="italic">Every Story</span>
                 </h2>
-
               </div>
-
               <p className="max-w-xs text-sm leading-6 text-[#75695f]">
-                From heirloom-inspired gold to contemporary
-                gemstones, discover pieces for life's most
+                From heirloom-inspired gold to contemporary gemstones, discover pieces for life's most
                 unforgettable moments.
               </p>
-
             </div>
-
           </Reveal>
 
           <CollectionCarousel items={collections} />
@@ -133,59 +105,36 @@ export default function Home({ onEnquire }) {
 
       <section
         id="our-story"
-        className="luxury-bg noise relative overflow-hidden px-6 py-16 text-white md:px-10 lg:py-24"
+        className="luxury-bg noise relative overflow-hidden px-4 py-12 text-white sm:px-6 md:px-10 md:py-16 lg:py-24"
       >
-
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
-
           <Reveal>
-
-            <div className="relative mx-auto max-w-[360px]">
-
-              <div className="absolute -inset-4 border border-[#d8b56c]/20" />
-
-              <div className="aspect-[4/5] max-h-[380px] overflow-hidden">
-
+            <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px]">
+              <div className="absolute -inset-3 border border-[#d8b56c]/20 sm:-inset-4" />
+              <div className="aspect-[4/5] max-h-[320px] overflow-hidden sm:max-h-[380px]">
                 <img
                   src={temple}
                   alt="Heritage temple jewellery"
                   className="image-luxury h-full w-full object-cover"
                 />
-
               </div>
-
-              <div className="absolute -bottom-5 -right-5 bg-[#f2e6d2] px-5 py-4 text-[#170b09] shadow-2xl">
-
-                <div className="font-display text-2xl">
-                  Since
-                </div>
-
-                <div className="text-lg tracking-[0.15em]">
-                  GENERATIONS
-                </div>
-
+              <div className="absolute -bottom-4 -right-2 bg-[#f2e6d2] px-4 py-3 text-[#170b09] shadow-2xl sm:-bottom-5 sm:-right-5 sm:px-5 sm:py-4">
+                <div className="font-display text-xl sm:text-2xl">Since</div>
+                <div className="text-sm tracking-[0.15em] sm:text-lg">GENERATIONS</div>
               </div>
-
             </div>
-
           </Reveal>
 
-
           <Reveal delay={0.1}>
-
             <div>
-
               <div className="mb-3 flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-[#d8b56c]">
                 <span className="h-px w-8 bg-[#d8b56c]" />
                 Our story
               </div>
-
-              <h2 className="font-display text-4xl leading-[0.95] md:text-5xl lg:text-6xl">
+              <h2 className="font-display text-3xl leading-[0.95] sm:text-4xl md:text-5xl lg:text-6xl">
                 Where heritage
                 <br />
-                <span className="gold-text italic">
-                  meets artistry.
-                </span>
+                <span className="gold-text italic">meets artistry.</span>
               </h2>
 
               <p className="mt-5 max-w-lg text-sm leading-7 text-white/60">
@@ -224,31 +173,21 @@ export default function Home({ onEnquire }) {
 
       <section
         id="craftsmanship"
-        className="bg-[#fbf8f1] px-6 py-16 md:px-10 lg:py-24"
+        className="bg-[#fbf8f1] px-4 py-12 sm:px-6 md:px-10 md:py-16 lg:py-24"
       >
-
         <div className="mx-auto max-w-6xl">
-
           <Reveal>
-
             <div className="text-center">
-
               <div className="text-[10px] uppercase tracking-[0.3em] text-[#987339]">
                 The Hissaria standard
               </div>
-
-              <h2 className="mt-2 font-display text-4xl md:text-5xl lg:text-6xl">
-                Crafted to be{' '}
-                <span className="italic">
-                  cherished.
-                </span>
+              <h2 className="mt-2 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Crafted to be <span className="italic">cherished.</span>
               </h2>
-
             </div>
-
           </Reveal>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:mt-12 sm:gap-5 md:grid-cols-3">
 
             {[
               [
@@ -289,7 +228,7 @@ export default function Home({ onEnquire }) {
 
                   </div>
 
-                  <h3 className="mt-8 font-display text-3xl">
+                  <h3 className="mt-5 font-display text-2xl sm:mt-8 sm:text-3xl">
                     {t}
                   </h3>
 
@@ -318,28 +257,18 @@ export default function Home({ onEnquire }) {
 
       <section
         id="showcase"
-        className="bg-[#eee4d5] px-6 py-16 md:px-10 lg:py-24"
+        className="bg-[#eee4d5] px-4 py-12 sm:px-6 md:px-10 md:py-16 lg:py-24"
       >
-
         <div className="mx-auto max-w-6xl">
-
           <Reveal>
-
-            <div className="mb-10 flex items-end justify-between gap-4">
-
+            <div className="mb-8 flex items-end justify-between gap-4 md:mb-10">
               <div>
-
                 <div className="text-[10px] uppercase tracking-[0.3em] text-[#987339]">
                   The edit
                 </div>
-
-                <h2 className="mt-1 font-display text-4xl md:text-5xl lg:text-6xl">
-                  Pieces worth{' '}
-                  <span className="italic">
-                    pausing for.
-                  </span>
+                <h2 className="mt-1 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                  Pieces worth <span className="italic">pausing for.</span>
                 </h2>
-
               </div>
 
               <button
@@ -359,26 +288,20 @@ export default function Home({ onEnquire }) {
 
             <Reveal className="md:col-span-7">
 
-              <div className="group relative aspect-[5/4] max-h-[340px] overflow-hidden bg-[#1a0f0c] md:max-h-[380px]">
-
+              <div className="group relative aspect-[4/5] overflow-hidden bg-[#1a0f0c] sm:aspect-[5/4] sm:max-h-[340px] md:max-h-[380px]">
                 <img
                   src={showcaseBridal}
                   alt="Bridal jewellery"
                   className="image-luxury h-full w-full object-cover object-center"
                 />
-
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-5 text-white md:p-6">
-
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 text-white sm:p-5 md:p-6">
                   <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">
                     Bridal edit
                   </div>
-
-                  <div className="mt-1 font-display text-2xl md:text-3xl">
+                  <div className="mt-1 font-display text-xl sm:text-2xl md:text-3xl">
                     For the day you'll remember forever.
                   </div>
-
                 </div>
-
               </div>
 
             </Reveal>
@@ -389,26 +312,20 @@ export default function Home({ onEnquire }) {
               delay={0.08}
             >
 
-              <div className="group relative aspect-[4/5] max-h-[340px] overflow-hidden bg-[#1a0f0c] md:max-h-[380px]">
-
+              <div className="group relative aspect-[4/5] overflow-hidden bg-[#1a0f0c] sm:max-h-[340px] md:max-h-[380px]">
                 <img
                   src={statement}
                   alt="Statement jewellery"
                   className="image-luxury h-full w-full object-cover object-top"
                 />
-
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-5 text-white md:p-6">
-
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 text-white sm:p-5 md:p-6">
                   <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">
                     Statement edit
                   </div>
-
                   <div className="mt-1 font-display text-xl md:text-2xl">
                     Colour with character.
                   </div>
-
                 </div>
-
               </div>
 
             </Reveal>
@@ -424,63 +341,38 @@ export default function Home({ onEnquire }) {
           VISIT BOUTIQUE
       ========================================================= */}
 
-      <section id="visit-store" className="luxury-bg px-6 py-14 text-white md:px-10 lg:py-20">
-
-        <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1fr_auto]">
-
+      <section
+        id="visit-store"
+        className="luxury-bg px-4 py-12 text-white sm:px-6 md:px-10 md:py-14 lg:py-20"
+      >
+        <div className="mx-auto grid max-w-6xl items-center gap-6 md:grid-cols-[1fr_auto] md:gap-8">
           <Reveal>
-
             <div>
-
               <div className="text-[10px] uppercase tracking-[0.3em] text-[#d8b56c]">
                 Visit the boutique
               </div>
-
-              <h2 className="mt-2 font-display text-4xl md:text-5xl">
-                Come see the details{' '}
-                <span className="italic">
-                  in person.
-                </span>
+              <h2 className="mt-2 font-display text-3xl sm:text-4xl md:text-5xl">
+                Come see the details <span className="italic">in person.</span>
               </h2>
-
-              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/55">
-
-                <span className="flex items-center gap-2">
-
-                  <MapPin
-                    size={15}
-                    className="text-[#d8b56c]"
-                  />
-
-                  {contact.addressShort}
-
+              <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/55 sm:mt-5">
+                <span className="flex items-start gap-2">
+                  <MapPin size={15} className="mt-0.5 shrink-0 text-[#d8b56c]" />
+                  <span className="leading-6">{contact.addressShort}</span>
                 </span>
-
               </div>
-
             </div>
-
           </Reveal>
-
 
           <Reveal delay={0.1}>
-
             <Link
               to="/contact"
-              className="btn-primary group inline-flex"
+              className="btn-primary group inline-flex w-full justify-center md:w-auto"
             >
               Contact Us
-
-              <ArrowRight
-                size={15}
-                className="transition group-hover:translate-x-1"
-              />
+              <ArrowRight size={15} className="transition group-hover:translate-x-1" />
             </Link>
-
           </Reveal>
-
         </div>
-
       </section>
 
     </main>

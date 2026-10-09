@@ -6,8 +6,8 @@ import { collections, contact, nav, social } from '../data/site'
 
 export default function Footer({ onEnquire }) {
   return (
-    <footer className="bg-[#100806] px-6 py-12 text-white md:px-10">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+    <footer className="bg-[#100806] px-4 py-10 text-white sm:px-6 md:px-10 md:py-12">
+      <div className="mx-auto grid max-w-6xl gap-8 sm:gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
           <img src={logo} alt="Hissaria Jewellers" className="h-12 w-12 object-contain" />
           <div className="mt-3 font-display text-2xl">NEW B. L. HISSARIA</div>

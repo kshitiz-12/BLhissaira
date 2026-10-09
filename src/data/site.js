@@ -1,4 +1,4 @@
-import heroImg from '../assets/hero-bg.jpg'
+import heroImg from '../assets/hero-desktop.jpg'
 import traditional from '../assets/gen-traditional.jpg'
 import bridal from '../assets/gen-bridal.jpg'
 import gemstone from '../assets/gen-gemstone.jpg'

@@ -8,14 +8,14 @@ function CollectionCard({ item, className = '' }) {
       href="#showcase"
       className={`group block overflow-hidden rounded-sm border border-[#3d2618]/10 bg-[#1a0f0c] shadow-sm ${className}`}
     >
-      <div className="relative aspect-[3/4] overflow-hidden">
+      <div className="relative aspect-[3/4] max-h-[62vh] overflow-hidden">
         <img src={item.img} alt={item.name} className="image-luxury h-full w-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#160c08]/85 via-[#160c08]/15 to-transparent" />
-        <div className="absolute bottom-4 left-4 right-4 text-white">
-          <div className="font-display text-2xl tracking-[-0.02em]">{item.name}</div>
-          <div className="mt-1 text-[9px] uppercase tracking-[0.22em] text-[#dfc17f]/80">{item.sub}</div>
+        <div className="absolute bottom-3 left-3 right-3 text-white sm:bottom-4 sm:left-4 sm:right-4">
+          <div className="font-display text-xl tracking-[-0.02em] sm:text-2xl">{item.name}</div>
+          <div className="mt-1 text-[8px] uppercase tracking-[0.22em] text-[#dfc17f]/80 sm:text-[9px]">{item.sub}</div>
         </div>
-        <span className="absolute right-4 top-4 rounded-full border border-white/30 bg-black/20 p-2 text-white backdrop-blur transition group-hover:border-[#d8b56c] group-hover:bg-[#d8b56c] group-hover:text-[#170b09]">
+        <span className="absolute right-3 top-3 rounded-full border border-white/30 bg-black/20 p-2 text-white backdrop-blur transition group-hover:border-[#d8b56c] group-hover:bg-[#d8b56c] group-hover:text-[#170b09] sm:right-4 sm:top-4">
           <ArrowRight size={14} />
         </span>
       </div>
