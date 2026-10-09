@@ -50,6 +50,8 @@ export default function Header({ onEnquire }) {
             src={logo}
             alt="New B. L. Hissaria Jewellers"
             className="h-9 w-9 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(217,178,93,.25)] sm:h-10 sm:w-10 md:h-12 md:w-12"
+            loading="eager"
+            decoding="async"
           />
           <div className="min-w-0">
             <div className="truncate font-display text-[15px] leading-none tracking-[0.04em] text-[#e8c985] sm:text-[20px] md:text-[24px]">

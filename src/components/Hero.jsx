@@ -32,6 +32,9 @@ export default function Hero() {
             src={heroMobile}
             alt="New B. L. Hissaria Jewellers boutique display"
             className="absolute inset-0 h-full w-full object-cover object-center lg:object-[72%_center]"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </picture>
 

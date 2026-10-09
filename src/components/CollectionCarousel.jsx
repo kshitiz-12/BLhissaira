@@ -9,7 +9,13 @@ function CollectionCard({ item, className = '' }) {
       className={`group block overflow-hidden rounded-sm border border-[#3d2618]/10 bg-[#1a0f0c] shadow-sm ${className}`}
     >
       <div className="relative aspect-[3/4] max-h-[62vh] overflow-hidden">
-        <img src={item.img} alt={item.name} className="image-luxury h-full w-full object-cover object-top" />
+        <img
+          src={item.img}
+          alt={item.name}
+          className="image-luxury h-full w-full object-cover object-top"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[#160c08]/85 via-[#160c08]/15 to-transparent" />
         <div className="absolute bottom-3 left-3 right-3 text-white sm:bottom-4 sm:left-4 sm:right-4">
           <div className="font-display text-xl tracking-[-0.02em] sm:text-2xl">{item.name}</div>
@@ -137,7 +143,13 @@ export default function CollectionCarousel({ items }) {
                 : 'border-[#3d2618]/10 opacity-50 hover:opacity-80'
             }`}
           >
-            <img src={item.img} alt={item.name} className="h-14 w-14 object-cover" />
+            <img
+              src={item.img}
+              alt={item.name}
+              className="h-14 w-14 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
           </button>
         ))}
       </div>

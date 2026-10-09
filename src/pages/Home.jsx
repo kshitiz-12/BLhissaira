@@ -116,6 +116,8 @@ export default function Home({ onEnquire }) {
                   src={temple}
                   alt="Heritage temple jewellery"
                   className="image-luxury h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-4 -right-2 bg-[#f2e6d2] px-4 py-3 text-[#170b09] shadow-2xl sm:-bottom-5 sm:-right-5 sm:px-5 sm:py-4">
@@ -293,6 +295,8 @@ export default function Home({ onEnquire }) {
                   src={showcaseBridal}
                   alt="Bridal jewellery"
                   className="image-luxury h-full w-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 text-white sm:p-5 md:p-6">
                   <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">
@@ -317,6 +321,8 @@ export default function Home({ onEnquire }) {
                   src={statement}
                   alt="Statement jewellery"
                   className="image-luxury h-full w-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 text-white sm:p-5 md:p-6">
                   <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">

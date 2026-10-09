@@ -9,7 +9,13 @@ export default function Footer({ onEnquire }) {
     <footer className="bg-[#100806] px-4 py-10 text-white sm:px-6 md:px-10 md:py-12">
       <div className="mx-auto grid max-w-6xl gap-8 sm:gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
-          <img src={logo} alt="Hissaria Jewellers" className="h-12 w-12 object-contain" />
+          <img
+            src={logo}
+            alt="Hissaria Jewellers"
+            className="h-12 w-12 object-contain"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="mt-3 font-display text-2xl">NEW B. L. HISSARIA</div>
           <div className="mt-1 text-[9px] tracking-[0.5em] text-[#d8b56c]">JEWELLERS</div>
           <p className="mt-4 max-w-xs text-xs leading-6 text-white/40">
