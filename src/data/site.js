@@ -1,10 +1,17 @@
-import necklace1 from '../assets/necklace1.webp'
-import necklace2 from '../assets/necklace2.webp'
-import necklace3 from '../assets/necklace3.webp'
-import necklace4 from '../assets/necklace4.webp'
-import necklace5 from '../assets/necklace5.webp'
+import heroImg from '../assets/hero-bg.jpg'
+import traditional from '../assets/gen-traditional.jpg'
+import bridal from '../assets/gen-bridal.jpg'
+import gemstone from '../assets/gen-gemstone.jpg'
+import temple from '../assets/gen-temple.jpg'
+import statement from '../assets/gen-statement.jpg'
+import showcaseBridal from '../assets/showcase-bridal.jpg'
 
 export const WHATSAPP_NUMBER = '919983799000'
+
+export const social = {
+  instagram: 'https://www.instagram.com/newblhissariaofficial/',
+  instagramHandle: '@newblhissariaofficial',
+}
 
 export const contact = {
   addressShort:
@@ -37,44 +44,48 @@ export const contact = {
 }
 
 export const nav = [
+  { label: 'Home', href: '/' },
   { label: 'Collections', href: '/#collections' },
-  { label: 'Our Story', href: '/#our-story' },
-  { label: 'Craftsmanship', href: '/#craftsmanship' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'About Us', href: '/#our-story' },
+  { label: 'Custom Jewellery', href: '/#craftsmanship' },
+  { label: 'Visit Store', href: '/#visit-store' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const collections = [
   {
     name: 'Traditional',
     sub: 'Timeless heritage',
-    img: necklace1,
+    img: traditional,
   },
   {
     name: 'Bridal',
     sub: 'For your big day',
-    img: necklace2,
+    img: bridal,
   },
   {
     name: 'Temple Jewellery',
     sub: 'Divine elegance',
-    img: necklace4,
+    img: temple,
   },
   {
     name: 'Gemstone',
     sub: 'Colours of royalty',
-    img: necklace3,
+    img: gemstone,
   },
   {
     name: 'Statement Pieces',
     sub: 'Bold & beautiful',
-    img: necklace5,
+    img: statement,
   },
 ]
 
 export {
-  necklace1,
-  necklace2,
-  necklace3,
-  necklace4,
-  necklace5,
+  heroImg,
+  traditional,
+  bridal,
+  gemstone,
+  temple,
+  statement,
+  showcaseBridal,
 }

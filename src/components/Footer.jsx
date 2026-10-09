@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { MapPin, MessageCircle } from 'lucide-react'
 import logo from '../assets/logo-clean.webp'
-import { collections, contact, nav } from '../data/site'
+import InstagramIcon from './InstagramIcon'
+import { collections, contact, nav, social } from '../data/site'
 
 export default function Footer({ onEnquire }) {
   return (
@@ -14,6 +15,15 @@ export default function Footer({ onEnquire }) {
           <p className="mt-4 max-w-xs text-xs leading-6 text-white/40">
             Timeless jewellery, heritage craftsmanship and a personal experience — from our family to yours.
           </p>
+          <a
+            href={social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 text-xs text-white/45 transition hover:text-[#d8b56c]"
+          >
+            <InstagramIcon size={16} className="text-[#d8b56c]" />
+            {social.instagramHandle}
+          </a>
         </div>
 
         <div>
@@ -49,6 +59,15 @@ export default function Footer({ onEnquire }) {
               <MessageCircle size={14} className="text-[#d8b56c]" />
               Contact Us
             </Link>
+            <a
+              href={social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 transition hover:text-white"
+            >
+              <InstagramIcon size={14} className="text-[#d8b56c]" />
+              Instagram
+            </a>
             <button onClick={onEnquire} className="flex items-center gap-2 transition hover:text-white">
               <MessageCircle size={14} className="text-[#d8b56c]" />
               WhatsApp Enquiry

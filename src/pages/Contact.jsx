@@ -14,9 +14,11 @@ import {
   Phone,
 } from 'lucide-react'
 
+import InstagramIcon from '../components/InstagramIcon'
 import {
   WHATSAPP_NUMBER,
   contact,
+  social,
 } from '../data/site'
 
 const stagger = {
@@ -439,22 +441,29 @@ ${message}`
                 </p>
 
                 <a
-                  href={
-                    WHATSAPP_NUMBER.includes('X')
-                      ? '#'
-                      : `https://wa.me/${WHATSAPP_NUMBER}`
-                  }
-                  onClick={(e) =>
-                    WHATSAPP_NUMBER.includes('X') &&
-                    e.preventDefault()
-                  }
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-[#d8b56c] transition hover:text-white"
                 >
                   Start a conversation
-
                   <ArrowRight size={14} />
+                </a>
+              </ContactCard>
+
+              {/* Instagram */}
+              <ContactCard icon={InstagramIcon} title="Instagram">
+                <p className="mb-3">
+                  Follow our latest collections, bridal edits and store moments on Instagram.
+                </p>
+                <a
+                  href={social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-[#987339] transition hover:text-[#624724]"
+                >
+                  {social.instagramHandle}
+                  <ExternalLink size={12} />
                 </a>
               </ContactCard>
 

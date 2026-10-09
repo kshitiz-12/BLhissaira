@@ -6,16 +6,16 @@ function CollectionCard({ item, className = '' }) {
   return (
     <a
       href="#showcase"
-      className={`group block overflow-hidden rounded-sm border border-[#3d2618]/10 bg-white/60 shadow-sm ${className}`}
+      className={`group block overflow-hidden rounded-sm border border-[#3d2618]/10 bg-[#1a0f0c] shadow-sm ${className}`}
     >
       <div className="relative aspect-[3/4] overflow-hidden">
-        <img src={item.img} alt={item.name} className="image-luxury h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#160c08]/80 via-[#160c08]/10 to-transparent" />
+        <img src={item.img} alt={item.name} className="image-luxury h-full w-full object-cover object-top" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#160c08]/85 via-[#160c08]/15 to-transparent" />
         <div className="absolute bottom-4 left-4 right-4 text-white">
-          <div className="font-display text-2xl">{item.name}</div>
-          <div className="mt-1 text-[9px] uppercase tracking-[0.22em] text-white/60">{item.sub}</div>
+          <div className="font-display text-2xl tracking-[-0.02em]">{item.name}</div>
+          <div className="mt-1 text-[9px] uppercase tracking-[0.22em] text-[#dfc17f]/80">{item.sub}</div>
         </div>
-        <span className="absolute right-4 top-4 rounded-full border border-white/30 bg-black/10 p-2 text-white backdrop-blur">
+        <span className="absolute right-4 top-4 rounded-full border border-white/30 bg-black/20 p-2 text-white backdrop-blur transition group-hover:border-[#d8b56c] group-hover:bg-[#d8b56c] group-hover:text-[#170b09]">
           <ArrowRight size={14} />
         </span>
       </div>

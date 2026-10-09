@@ -46,12 +46,12 @@ body {
 }
 
 .image-luxury {
-  filter: saturate(.88) contrast(1.04);
+  filter: saturate(.94) contrast(1.03) brightness(1.01);
   transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter .7s ease;
 }
 .group:hover .image-luxury {
-  transform: scale(1.03);
-  filter: saturate(.95) contrast(1.06);
+  transform: scale(1.04);
+  filter: saturate(1) contrast(1.05) brightness(1.02);
 }
 
 .noise::before {

@@ -1,8 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-
 import {
   ArrowRight,
-  ChevronDown,
   Diamond,
   Gem,
   Heart,
@@ -16,207 +13,22 @@ import { Link } from 'react-router-dom'
 import CollectionCarousel, {
   CollectionGrid,
 } from '../components/CollectionCarousel'
-
+import Hero from '../components/Hero'
 import Reveal from '../components/Reveal'
+import VideoSection from '../components/VideoSection'
 
 import {
   collections,
   contact,
-  necklace1,
-  necklace2,
-  necklace4,
-  necklace5,
+  showcaseBridal,
+  statement,
+  temple,
 } from '../data/site'
 
 export default function Home({ onEnquire }) {
-  const { scrollYProgress } = useScroll()
-
-  const heroY = useTransform(
-    scrollYProgress,
-    [0, 0.3],
-    [0, 60]
-  )
-
   return (
     <main>
-
-      {/* =========================================================
-          HERO
-      ========================================================= */}
-
-      <section
-        id="home"
-        className="luxury-bg noise relative min-h-[580px] overflow-hidden text-white md:min-h-[680px] lg:min-h-[85vh]"
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_48%,rgba(168,119,54,.14),transparent_32%)]" />
-
-        <motion.div
-          style={{ y: heroY }}
-          className="absolute -right-16 top-32 h-[420px] w-[420px] rounded-full bg-[#b98c47]/10 blur-3xl"
-        />
-
-        <div className="mx-auto grid min-h-[85vh] max-w-6xl items-center gap-8 px-6 pb-10 pt-28 md:px-10 lg:grid-cols-[1fr_0.85fr] lg:gap-14 lg:pt-24">
-
-          <Reveal className="relative z-10 max-w-lg">
-
-            <div className="mb-5 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.35em] text-[#d9bb7a]">
-              <span className="h-px w-8 bg-[#d9bb7a]" />
-              A LEGACY OF CRAFT
-            </div>
-
-            <h1 className="font-display text-[42px] leading-[0.9] tracking-[-0.03em] sm:text-[54px] lg:text-[68px]">
-              Tradition in
-              <br />
-              <span className="gold-text italic">
-                Every Golden
-              </span>
-              <br />
-              Detail.
-            </h1>
-
-            <p className="mt-6 max-w-md text-sm leading-7 text-white/65">
-              Exquisite jewellery crafted with heritage,
-              purity and unmatched artistry — designed to
-              become part of your story for generations.
-            </p>
-
-            <div className="mt-7 flex flex-wrap gap-3">
-
-              <a
-                href="#collections"
-                className="btn-primary group"
-              >
-                Explore Collections
-
-                <ArrowRight
-                  size={15}
-                  className="transition group-hover:translate-x-1"
-                />
-              </a>
-
-              <button
-                onClick={onEnquire}
-                className="btn-outline"
-              >
-                Book a Consultation
-              </button>
-
-            </div>
-
-            <div className="mt-10 grid max-w-sm grid-cols-3 border-t border-white/10 pt-5">
-
-              {[
-                ['01', 'Trusted'],
-                ['02', 'Crafted'],
-                ['03', 'Certified'],
-              ].map(([n, t]) => (
-                <div
-                  key={n}
-                  className="border-r border-white/10 pl-1 last:border-0"
-                >
-                  <div className="font-display text-xl text-[#d9bb7a]">
-                    {n}
-                  </div>
-
-                  <div className="mt-1 text-[8px] uppercase tracking-[0.2em] text-white/45">
-                    {t}
-                  </div>
-                </div>
-              ))}
-
-            </div>
-
-          </Reveal>
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 40,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 1,
-              delay: 0.2,
-              ease: [0.2, 0.7, 0.2, 1],
-            }}
-            className="relative mx-auto w-full max-w-[380px] lg:ml-auto lg:max-w-[420px]"
-          >
-
-            <div className="absolute -inset-4 rounded-[45%] bg-[#c69b52]/8 blur-2xl" />
-
-            <div className="group relative overflow-hidden rounded-2xl border border-[#d6b66e]/25 bg-[#271310] p-1.5 shadow-[0_20px_80px_rgba(0,0,0,.45)]">
-
-              <div className="relative aspect-[4/5] max-h-[420px] overflow-hidden rounded-xl">
-
-                <img
-                  src={necklace1}
-                  alt="Traditional gold jewellery collection"
-                  className="image-luxury h-full w-full object-cover object-center"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#170b09]/70 via-transparent to-transparent" />
-
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
-
-                  <div>
-                    <div className="text-[8px] uppercase tracking-[0.3em] text-[#dfc17f]">
-                      Featured Collection
-                    </div>
-
-                    <div className="font-display text-2xl">
-                      Heritage Gold
-                    </div>
-                  </div>
-
-                  <span className="rounded-full border border-white/25 bg-black/20 p-2.5 backdrop-blur">
-                    <ArrowRight size={16} />
-                  </span>
-
-                </div>
-
-              </div>
-            </div>
-
-            <div className="absolute -bottom-4 -left-4 hidden rounded-xl border border-[#d6b66e]/25 bg-[#21100d]/90 px-4 py-3 shadow-xl backdrop-blur md:block">
-
-              <div className="flex items-center gap-2.5">
-
-                <ShieldCheck
-                  className="text-[#d8b56c]"
-                  size={18}
-                />
-
-                <div>
-                  <div className="text-[8px] uppercase tracking-[0.2em] text-white/40">
-                    Our promise
-                  </div>
-
-                  <div className="font-display text-base">
-                    Purity & precision
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-          </motion.div>
-
-        </div>
-
-        <div className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-[9px] uppercase tracking-[0.3em] text-white/35 lg:flex">
-          <span>Scroll to discover</span>
-          <ChevronDown
-            size={14}
-            className="animate-bounce"
-          />
-        </div>
-
-      </section>
-
+      <Hero />
 
       {/* =========================================================
           TRUST STRIP
@@ -335,7 +147,7 @@ export default function Home({ onEnquire }) {
               <div className="aspect-[4/5] max-h-[380px] overflow-hidden">
 
                 <img
-                  src={necklace4}
+                  src={temple}
                   alt="Heritage temple jewellery"
                   className="image-luxury h-full w-full object-cover"
                 />
@@ -498,6 +310,8 @@ export default function Home({ onEnquire }) {
       </section>
 
 
+      <VideoSection />
+
       {/* =========================================================
           SHOWCASE
       ========================================================= */}
@@ -545,15 +359,15 @@ export default function Home({ onEnquire }) {
 
             <Reveal className="md:col-span-7">
 
-              <div className="group relative aspect-[5/4] max-h-[320px] overflow-hidden bg-[#d4c1a4] md:max-h-[360px]">
+              <div className="group relative aspect-[5/4] max-h-[340px] overflow-hidden bg-[#1a0f0c] md:max-h-[380px]">
 
                 <img
-                  src={necklace2}
+                  src={showcaseBridal}
                   alt="Bridal jewellery"
-                  className="image-luxury h-full w-full object-cover"
+                  className="image-luxury h-full w-full object-cover object-center"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-5 text-white">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-5 text-white md:p-6">
 
                   <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">
                     Bridal edit
@@ -575,15 +389,15 @@ export default function Home({ onEnquire }) {
               delay={0.08}
             >
 
-              <div className="group relative aspect-[4/5] max-h-[320px] overflow-hidden bg-[#d4c1a4] md:max-h-[360px]">
+              <div className="group relative aspect-[4/5] max-h-[340px] overflow-hidden bg-[#1a0f0c] md:max-h-[380px]">
 
                 <img
-                  src={necklace5}
-                  alt="Statement gemstone jewellery"
-                  className="image-luxury h-full w-full object-cover"
+                  src={statement}
+                  alt="Statement jewellery"
+                  className="image-luxury h-full w-full object-cover object-top"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-5 text-white">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-5 text-white md:p-6">
 
                   <div className="text-[8px] uppercase tracking-[0.3em] text-[#e7ca8b]">
                     Statement edit
@@ -610,7 +424,7 @@ export default function Home({ onEnquire }) {
           VISIT BOUTIQUE
       ========================================================= */}
 
-      <section className="luxury-bg px-6 py-14 text-white md:px-10 lg:py-20">
+      <section id="visit-store" className="luxury-bg px-6 py-14 text-white md:px-10 lg:py-20">
 
         <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1fr_auto]">
 
