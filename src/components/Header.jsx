@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight, Heart, Menu, MessageCircle, Search, X } from 'lucide-react'
+import { ArrowRight, Menu, MessageCircle, X } from 'lucide-react'
 import logo from '../assets/logo-clean.webp'
 import { nav } from '../data/site'
 
@@ -83,18 +83,6 @@ export default function Header({ onEnquire }) {
         </nav>
 
         <div className="flex shrink-0 items-center gap-1 md:gap-2">
-          <button
-            aria-label="Search"
-            className="hidden rounded-full p-2 text-white/75 transition hover:bg-white/10 hover:text-white md:block"
-          >
-            <Search size={17} />
-          </button>
-          <button
-            aria-label="Favourites"
-            className="hidden rounded-full p-2 text-white/75 transition hover:bg-white/10 hover:text-white md:block"
-          >
-            <Heart size={17} />
-          </button>
           <button
             onClick={onEnquire}
             className="hidden items-center gap-2 rounded-full border border-[#d4b06a]/70 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#e8c985] transition hover:bg-[#d4b06a] hover:text-[#170b09] sm:flex"
